@@ -1,38 +1,121 @@
-.App {
-  text-align: center;
+/* Buttons DIV
+--------------------------------------------*/
+
+.div-buttons {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.div2-button-new {
+  width: 75%;
+  display: flex;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Responsiveness for Phones and Small Tablets
+----------------------------------------------
+--------------------------------------------*/
+
+@media (max-width: 897px)
+{
+
+  /* Table 
+  --------------------------------------------*/
+
+  .div-table {
+    margin-top: 3em;
+    display: flex;
+    justify-content: center;
   }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid rgba(33, 33, 33, 0.5);
+  }
+  
+  .table-row-headers {
+    line-height: 2rem;
+  }
+  
+  
+  .table-row-headers th{
+    border: 1px solid rgba(33, 33, 33, 0.5);
+    font-size: 1.2em;
+    background: #AED6F1 ;
+    color: #333333;
+  }
+  
+  .task, .duedate, .prio, .comments {
+    text-align: center;
+  }
+  
+  .table-row-task {
+    line-height: 2em;
+  }
+  
+  .table-row-task td {
+    font-size: 1.1em;
+    color: #333333;
+    border: 1px solid rgba(33, 33, 33, 0.5);
+  }
+
+  /* Button 
+  --------------------------------------------*/
+
+  .div-button-add {
+    margin-top: 3em;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .div-button2-add {
+    width: 100%;
+  }
+  
+  .button-add {
+    font-size: 1.2em;
+    width: 10%;
+    min-width: 100px;
+    height: 100%;
+    line-height: 1.5em;
+    border-radius: 15px;
+    background: #AED6F1;
+    color: #333333;
+    cursor: pointer;
+  }
+
+  /* Inputs 
+------------------------------------ */
+
+.div-input {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: start;
+  /*display: none;*/
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items:baseline ;
+  padding-left: 20px;
+  width: 50%;
+  height: 200px;
+  border: 1px solid black;
+  font-size: 1.2em;
+  background:  #aed6f1;
+  border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.div-task, .div-duedate, .div-prio, .div-comments {
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input-task, .input-duedate, .input-prio, .input-comments {
+  margin-left: 5px;
+  min-width: 10px;
+  border-radius: 10px;
+}
+
 }
