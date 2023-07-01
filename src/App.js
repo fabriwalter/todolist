@@ -21,7 +21,6 @@ class App extends Component {
   // Shows the form in case the user wants to add a new task
   // --------------------------------------------------------------------
   displayForm = (e) => {
-    e.preventDefault();
     const divFormVisibility = document.querySelector('#divFormVisibility');
     divFormVisibility.classList.toggle('visibility');
     const divButtonAddVisibility = document.querySelector('#divButtonAddVisibility');
@@ -35,6 +34,7 @@ class App extends Component {
     e.preventDefault();
     this.getValue(e);
     this.createElement();
+    this.clearInputs(e);
   }
 
 
@@ -85,7 +85,6 @@ class App extends Component {
         default:
           continue;
       }
-
     }
   }
 
@@ -124,6 +123,22 @@ class App extends Component {
     newTBody.appendChild(newTR);
     table.appendChild(newTBody);
     this.sendDataToTable(newTBody);
+  }
+
+
+  // Clears the form's input
+  // --------------------------------------------------------------------
+
+  clearInputs = (e) => {
+    const listaDivs = e.target.children;
+    
+    for (let i = 0; i < listaDivs.length; i++) {
+      let eachDiv = listaDivs[i];
+      let inputs = eachDiv.lastElementChild;
+      inputs.value = '';
+    }
+
+    this.displayForm();
   }
 
 
