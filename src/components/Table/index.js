@@ -20,7 +20,6 @@ class Table extends Component {
   
     render() {
       const { tasks } = this.state;
-      console.log(tasks);
       return(
         <div className="div-table">
           <table className="table" id={this.props.id}>
@@ -35,8 +34,8 @@ class Table extends Component {
             </thead>
 
             {tasks.map((tarefa, index) => (
-              <tbody className="tbody">
-                <tr key={index} className="table-row-task">
+              <tbody key={index} className="tbody">
+                <tr className="table-row-task">
                   <td className="task">{tarefa.task}</td>
                   <td className="duedate">{tarefa.date}</td>
                   <td className="prio">{tarefa.prio}</td>
