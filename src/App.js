@@ -18,6 +18,7 @@ class App extends Component {
     };
   }
 
+
   // Shows the form in case the user wants to add a new task
   // --------------------------------------------------------------------
   displayForm = (e) => {
@@ -31,19 +32,20 @@ class App extends Component {
   // Main function responsible for calling out all the other functions when adding a new task.
   // --------------------------------------------------------------------
   addTask = (e) => {
+    const { tasks } = this.state;
     e.preventDefault();
     this.getValue(e);
     this.createElement();
     this.clearInputs(e);
+
+    localStorage.setItem('tarefas', JSON.stringify(tasks))
   }
 
 
   // Gets the new information
   // --------------------------------------------------------------------
   getValue = (e) => {
-    let { newTask, newDate, newPrio, newComment } = this.state;
-    const { tasks } = this.state;
-    
+    let { newTask, newDate, newPrio, newComment, tasks } = this.state;
 
     tasks.push({
       task: newTask,
@@ -62,7 +64,6 @@ class App extends Component {
   // Function responsible for sending the data to the list
   // --------------------------------------------------------------------
   sendDataToTable(tbody) {
-    const { tasks } = this.state;
     
     let trow = tbody.children;
     let listOfTds = trow[0].children;
@@ -167,11 +168,12 @@ class App extends Component {
 
 
   render() {
+
     return(
       <div>
         <Header headline="TO DO LIST" subheading=" - Unlock your productivity potential with this to-do list" />
 
-        <Table id="table" />
+        <Table id="table"/>
         
         <Form idEnviado="form1" action={this.addTask} change={this.handleChangeAll} selected="" />
 
