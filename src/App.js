@@ -18,6 +18,13 @@ class App extends Component {
     };
   }
 
+  componentDidMount() {
+    if(localStorage.getItem('tarefas') !== null) {
+      const tasks = JSON.parse(localStorage.getItem('tarefas'));
+      this.setState({ tasks });
+    }
+  }
+
 
   // Shows the form in case the user wants to add a new task
   // --------------------------------------------------------------------
@@ -34,7 +41,7 @@ class App extends Component {
   addTask = (e) => {
     const { tasks } = this.state;
     e.preventDefault();
-    this.getValue(e);
+    this.getValue();
     this.createElement();
     this.clearInputs(e);
 
@@ -44,7 +51,7 @@ class App extends Component {
 
   // Gets the new information
   // --------------------------------------------------------------------
-  getValue = (e) => {
+  getValue = () => {
     let { newTask, newDate, newPrio, newComment, tasks } = this.state;
 
     tasks.push({
@@ -54,9 +61,12 @@ class App extends Component {
       comment: newComment 
     });
 
+    console.log(tasks);
+
     this.setState({
       tasks: tasks,
     })
+
 
   }
 
