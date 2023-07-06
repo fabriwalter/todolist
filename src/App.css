@@ -20,7 +20,7 @@
 ----------------------------------------------
 --------------------------------------------*/
 
-@media (max-width: 897px)
+@media (min-width: 360px) and (max-width: 897px) 
 {
 
   /* Table 
@@ -33,7 +33,7 @@
   }
   
   .table {
-    width: 100%;
+    width: 80%;
     border-collapse: collapse;
     border: 1px solid rgba(33, 33, 33, 0.5);
   }
@@ -45,7 +45,7 @@
   
   .table-row-headers th{
     border: 1px solid rgba(33, 33, 33, 0.5);
-    font-size: 1.2em;
+    font-size: 1em;
     background: #AED6F1 ;
     color: #333333;
   }
@@ -55,71 +55,56 @@
   }
   
   .table-row-task {
-    line-height: 2em;
+    line-height: 1em;
   }
   
   .table-row-task td {
-    font-size: 1.1em;
+    font-size: 1em;
     color: #333333;
     border: 1px solid rgba(33, 33, 33, 0.5);
   }
 
-  /* Button 
-  --------------------------------------------*/
-
-  .div-button-add {
-    margin-top: 3em;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .div-button2-add {
-    width: 100%;
-  }
-  
-  .button-add {
-    font-size: 1.2em;
-    width: 10%;
-    min-width: 100px;
-    height: 100%;
-    line-height: 1.5em;
-    border-radius: 15px;
-    background: #AED6F1;
-    color: #333333;
-    cursor: pointer;
-  }
 
   /* Inputs 
------------------------------------- */
+  ------------------------------------ */
 
-.div-input {
-  margin-top: 3rem;
-  display: flex;
-  justify-content: start;
-  /*display: none;*/
+  .div-input {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    /*display: none;*/
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    padding-left: 20px;
+    width: 50%;
+    height: 200px;
+    border: 1px solid black;
+    font-size: 1.2em;
+    background:  #aed6f1;
+    border-radius: 10px;
+  }
+
+  .div-task, .div-duedate, .div-prio, .div-comments {
+    display: flex;
+  }
+
+  .input-task, .input-duedate, .input-prio, .input-comments {
+    margin-left: 5px;
+    width: 45%;
+    min-width: 10px;
+    border-radius: 10px;
+  }
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items:baseline ;
-  padding-left: 20px;
-  width: 50%;
-  height: 200px;
-  border: 1px solid black;
-  font-size: 1.2em;
-  background:  #aed6f1;
-  border-radius: 10px;
-}
-
-.div-task, .div-duedate, .div-prio, .div-comments {
-  display: flex;
-}
-
-.input-task, .input-duedate, .input-prio, .input-comments {
-  margin-left: 5px;
-  min-width: 10px;
-  border-radius: 10px;
-}
-
+@media (min-width: 360px) and (max-width: 430px) 
+{
+  .div-buttons {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+  }
 }
