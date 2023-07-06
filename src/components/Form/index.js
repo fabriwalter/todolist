@@ -18,7 +18,7 @@ class Form extends Component {
             <form className='form' id={this.props.idEnviado} name="form1" onSubmit={this.props.action}>
               
               
-              <div className='div-task'>
+              <div className='div-task'> 
                 <label>Task:</label>
                 <input className='input-task' type='text' placeholder='' name="task" onChange={this.props.change}></input>
               </div>

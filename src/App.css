@@ -12,6 +12,10 @@
   display: flex;
 }
 
+.div-button-add {
+  display: flex;
+}
+
 /* Responsiveness for Phones and Small Tablets
 ----------------------------------------------
 --------------------------------------------*/

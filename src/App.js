@@ -23,6 +23,7 @@ class App extends Component {
       const tasks = JSON.parse(localStorage.getItem('tarefas'));
       this.setState({ tasks });
     }
+    
   }
 
 
@@ -60,8 +61,6 @@ class App extends Component {
       prio: newPrio,
       comment: newComment 
     });
-
-    console.log(tasks);
 
     this.setState({
       tasks: tasks,
@@ -176,6 +175,32 @@ class App extends Component {
     }
   };
 
+  // Delete's task
+  // --------------------------------------------------------------------
+  
+  deleteTask() {
+
+    const selectedInputTask = document.querySelectorAll('.input-task');
+
+    if(selectedInputTask[0].value === '') {
+      alert('Digite qual tarefa você quer excluir');
+      return;
+    }
+
+    if(localStorage.getItem('tarefas' === null)) {
+      alert('Não há tarefas para excluir!');
+      return;
+    } 
+
+    const storage = JSON.parse(localStorage.getItem('tarefas'));
+    // eslint-disable-next-line array-callback-return
+    const newStorage = storage.filter((tarefa) => selectedInputTask[0].value !== tarefa.task);
+    
+    localStorage.removeItem('tarefas');
+    localStorage.setItem('tarefas', JSON.stringify(newStorage));
+    window.location.reload();
+  }
+
 
   render() {
 
@@ -190,8 +215,12 @@ class App extends Component {
         <div className='div-buttons'>
           <div className='div2-button-new'>
             <Button nome="New Task" class="button-new" action={this.displayForm}/>
+            <Button nome="Delete Task" class="button-new" action={this.displayForm}/>
             <div id='divButtonAddVisibility' className='visibility'>
-              <Button nome="Add" class="button-add" type="submit" formEnviado="form1"/>
+              <div className='div-button-add'>
+                <Button nome="Add" class="button-add" type="submit" formEnviado="form1"/>
+                <Button nome="Delete" class="button-add" action={this.deleteTask} />
+              </div>
             </div>
           </div>
         </div>
